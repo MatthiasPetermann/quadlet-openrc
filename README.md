@@ -1,8 +1,8 @@
 # quadlet-openrc 0.3
 
-A small Quadlet-to-OpenRC generator for central, rootful Podman operation on Alpine Linux. It preserves the useful declarative Quadlet model without emulating systemd.
+Quadlet is the declarative container-unit format introduced in the systemd ecosystem and heavily adopted in Red Hat and derivative distributions. It offers a pragmatic abstraction for describing Podman workloads as small, composable unit files.
 
-Version 0.3 is the first stable API baseline and the provisional feature-complete release for the intended single-host scope.
+For single-node appliances, Alpine Linux is often a strong operating-system choice because it is compact and has a reduced attack surface. This project brings a carefully selected subset of Quadlet to Alpine as an OpenRC generator, so the model fits natively into an OpenRC-based host without adding a systemd compatibility layer.
 
 ## Features
 
@@ -34,12 +34,6 @@ quadlet-openrc lint
 quadlet-openrc generate --dry-run
 quadlet-openrc generate --clean
 quadlet-openrc version
-```
-
-The old 0.2 form remains valid:
-
-```sh
-quadlet-openrc --lint --dry-run
 ```
 
 ## Stable naming
@@ -95,4 +89,4 @@ Supported service keys are `Restart`, `RestartSec`, and `TimeoutStopSec`.
 
 These would require a second service-manager layer and would undermine the OpenRC-native design.
 
-See `STABLE-API.md`, `MIGRATION-0.2.md`, and `examples/full-stack/`.
+See `STABLE-API.md` and `examples/full-stack/`.

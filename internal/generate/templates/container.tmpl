@@ -1,0 +1,13 @@
+{{.Header}}description={{.Description}}
+name={{.Name}}
+supervisor=supervise-daemon
+command={{.Command}}
+command_args={{.CommandArgs}}
+output_log=/var/log/quadlet/{{.ServiceName}}.log
+error_log=/var/log/quadlet/{{.ServiceName}}.err
+respawn_delay={{.RespawnDelay}}
+respawn_max={{.RespawnMax}}
+
+{{.Depend}}
+start_pre() { checkpath -d -m 0755 /var/log/quadlet; }
+stop_post() { {{.Podman}} stop -t {{.Timeout}} {{.ContainerName}} >/dev/null 2>&1 || true; }

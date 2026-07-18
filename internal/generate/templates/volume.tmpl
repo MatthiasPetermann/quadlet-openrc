@@ -1,0 +1,5 @@
+{{.Header}}description={{.Description}}
+{{.Depend}}
+start() { {{.Podman}} volume exists {{.Name}} || {{.Podman}} {{.CreateArgs}}; }
+stop() { :; }
+status() { {{.Podman}} volume exists {{.Name}}; }

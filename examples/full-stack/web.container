@@ -1,0 +1,29 @@
+[Unit]
+Description=Hardened nginx example
+Requires=frontend.network webdata.volume nginx.image
+After=frontend.network webdata.volume nginx.image
+
+[Container]
+Image=nginx.image
+ContainerName=web
+Network=frontend.network
+Volume=webdata.volume:/usr/share/nginx/html:rw
+PublishPort=8080:80
+UserNS=auto
+DropCapability=ALL
+NoNewPrivileges=true
+ReadOnly=true
+Tmpfs=/tmp:rw,noexec,nosuid,size=64m
+Tmpfs=/run:rw,noexec,nosuid,size=16m
+PidsLimit=256
+Memory=512m
+CPUs=1
+HealthCmd=wget -q -O /dev/null http://127.0.0.1/
+HealthInterval=30s
+HealthTimeout=5s
+HealthRetries=3
+
+[Service]
+Restart=always
+RestartSec=3
+TimeoutStopSec=15

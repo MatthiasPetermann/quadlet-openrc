@@ -1,0 +1,6 @@
+[Unit]
+Description=Frontend application network
+
+[Network]
+NetworkName=frontend
+Driver=bridge

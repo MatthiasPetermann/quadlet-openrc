@@ -1,0 +1,5 @@
+{{.Header}}description={{.Description}}
+{{.Depend}}
+start() { {{.Podman}} image exists {{.Name}} || { {{.Podman}} {{.PullArgs}} && {{.Podman}} tag {{.Image}} {{.Name}}; }; }
+stop() { :; }
+status() { {{.Podman}} image exists {{.Name}}; }

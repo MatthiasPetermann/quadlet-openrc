@@ -1,0 +1,5 @@
+{{.Header}}description={{.Description}}
+{{.Depend}}
+start() { {{.Podman}} network exists {{.Name}} || {{.Podman}} {{.CreateArgs}}; }
+stop() { :; }
+status() { {{.Podman}} network exists {{.Name}}; }

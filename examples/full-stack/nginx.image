@@ -1,0 +1,6 @@
+[Unit]
+Description=Pinned nginx image
+
+[Image]
+Image=docker.io/library/nginx:1.29-alpine
+ImageTag=localhost/systemd-nginx

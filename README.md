@@ -16,6 +16,7 @@ For single-node appliances, Alpine Linux is often a strong operating-system choi
 - rootful hardening options without requiring SELinux
 - security lint mode
 - complete runnable reference example
+- declarative example focused on source units
 
 ## Build on Alpine
 
@@ -89,4 +90,6 @@ Supported service keys are `Restart`, `RestartSec`, and `TimeoutStopSec`.
 
 These would require a second service-manager layer and would undermine the OpenRC-native design.
 
-See `STABLE-API.md` and `examples/full-stack/`.
+See `examples/`.
+
+Acknowledgement: This project is by Petermann Digital (https://www.petermann-digital.de).

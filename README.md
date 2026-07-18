@@ -92,4 +92,4 @@ These would require a second service-manager layer and would undermine the OpenR
 
 See `examples/`.
 
-Acknowledgement: This project is by Petermann Digital (https://www.petermann-digital.de).
+Acknowledgement: This is an experimental project by Petermann Digital (https://www.petermann-digital.de). Feedback and suggestions are welcome.
